@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 function ProjectList() {
  const [product, setproduct] = useState([]);
- const url = "http://localhost:5000/api/v1/products";
+ const url = "/api/v1/products";
   useEffect(() => {
     axios.get(url).then(res => {
       console.log(res.data);
