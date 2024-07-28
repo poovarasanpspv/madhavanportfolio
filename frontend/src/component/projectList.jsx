@@ -30,7 +30,7 @@ function ProjectList() {
       <div className="row row-cols-md-3 row-cols-sm-12 gy-3">
           {
           product.success ?
-            product.products.map(item => {
+            product.products.map((item i)=> {
               return <div className='col' key={item._id}>
                  <Modal
                    show={show}
