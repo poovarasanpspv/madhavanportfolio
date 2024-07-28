@@ -45,6 +45,7 @@ function ProjectList() {
                      <p className='card-text'>{item.description}</p>
                    </Modal.Body>
                    <Modal.Footer>
+                      <a class="btn btn-success" href={item.websiteUrl}>visit website</a> 
                      <Button variant="secondary" onClick={handleClose}>
                        Close
                      </Button>
@@ -52,12 +53,11 @@ function ProjectList() {
                  </Modal>
                   <div className={i > 8 ? viewMorestate : 'card' } onClick={handleShow}>
                     <div className='over-hidden'>
-                      <img height="200" src={item.image} alt="" className='card-img-top' />
+                      <img height="170" src={item.image} alt="" className='card-img-top' />
                     </div>
                     <div className="card-body">
                       <h3 className='card-title'>{item.name}</h3>
                       <p className='card-text'>{item.workingdate}</p>
-                       <a class="btn btn-success" href={item.websiteUrl}>visit website</a> 
                     </div>
                   </div>
             </div>
