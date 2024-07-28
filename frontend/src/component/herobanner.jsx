@@ -41,8 +41,8 @@ function Herobanner() {
                   currently writing a book on logo design and storyte
                 </p>
                 <div className="get-touch-you">
-                  <a href="#"> Get in Touch</a>
-                  <a href="#" className="color-fill"> Resume</a>
+                  <a href="#contactid"> Get in Touch</a>
+                  <a href="/api/v1/uploads/madhavan-resume.pdf" className="color-fill"> Resume</a>
                 </div>
             </div>
             <div className="col-sm-12 col-md-5">
