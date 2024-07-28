@@ -238,8 +238,31 @@ border-bottom-left-radius: 1rem;
   .hero-banner-box-section .hero-banner-text{
     padding: 30px;
   }
-    .hero-banner-text h1,
-    .hero-banner-text h2 {
-      font-size: 30px;
+  .hero-banner-text h1,
+  .hero-banner-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .typed-text-color{
+    font-size: 1.3rem;
+  }
+  
+  .hero-banner-text h2 {
+    display: inline;
+    overflow: hidden;
+  }
+
+    .get-touch-you a{
+      padding: 8px 31px;
+      font-size: 14px;
+      display: inline-block;
     }
+    nav.navbarnavbar-expand-lg{
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    .section-expit .icons img{
+      max-width: 30px;
+    }
+   
 }
