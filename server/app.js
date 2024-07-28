@@ -11,7 +11,7 @@ dotenv.config({path:path.join(__dirname,"/config/config.env")});
 app.use('/uploads', express.static(path.join(__dirname,'uploads') ) )
 const product = require('./routes/product');
 const auth = require('./routes/auth');
-const errorMiddleware = require('./Middlewares/error');
+const errorMiddleware = require('./middlewares/error');
 app.use("/api/v1", product);
 app.use("/api/v1/",auth);
 
