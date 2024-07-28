@@ -53,7 +53,7 @@ function Herobanner() {
 
       {/* export icons section */}
 
-      <section className='my-5 section-expit'>
+      <section className='my-md-5 section-expit'>
         <div className="container">
           <h2 className='my-4'>EXPERIENCE WITH</h2>
           <div className="icons">
