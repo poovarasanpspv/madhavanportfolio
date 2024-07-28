@@ -14,11 +14,14 @@ function ProjectList() {
       setproduct(res.data);
     }).catch(err => console.log(err))
   },[]);
+   const [viewMorestate, setviewMorestate] = useState('card d-none');
  
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
- 
+ function viewnoreheight() {
+  setviewMorestate('card');
+ }
   return (
     <div className='Project-collect-list scroll-by-section' id='project-list'>
       <h1 className='product-list'>Projects List</h1>
@@ -47,7 +50,7 @@ function ProjectList() {
                      </Button>
                    </Modal.Footer>
                  </Modal>
-                  <div className="card" onClick={handleShow}>
+                  <div className={i > 8 ? viewMorestate : 'card' } onClick={handleShow}>
                     <div className='over-hidden'>
                       <img height="200" src={item.image} alt="" className='card-img-top' />
                     </div>
@@ -62,7 +65,7 @@ function ProjectList() {
           }
       </div>
     </div>
-    <div className='read py-5'> <a href="/" className='view-more'> View More </a></div>
+    <div className='read py-5'> <span className='view-more' onClick={viewnoreheight}> View More </span> </div>
     </div>
   )
 }
