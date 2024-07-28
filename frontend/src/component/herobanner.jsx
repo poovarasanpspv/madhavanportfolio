@@ -12,8 +12,8 @@ function Herobanner() {
   setTimeout(()=> {
     new Typed(".typed-text", {
       strings: ["", "UIUX Designer", "Graphics Designer", "Web Designer", "Web Developer"],
-       typeSpeed: 170,
-       backSpeed: 150,
+       typeSpeed: 200,
+       backSpeed: 200,
        loop: true,
        cursorChar: '',
    });
