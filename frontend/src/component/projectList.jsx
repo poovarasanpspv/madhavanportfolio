@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 import axios from 'axios';
 function ProjectList() {
  const [product, setproduct] = useState([]);
@@ -11,7 +14,11 @@ function ProjectList() {
       setproduct(res.data);
     }).catch(err => console.log(err))
   },[]);
-
+ 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+ 
   return (
     <div className='Project-collect-list scroll-by-section' id='project-list'>
       <h1 className='product-list'>Projects List</h1>
@@ -22,18 +29,34 @@ function ProjectList() {
           product.success ?
             product.products.map(item => {
               return <div className='col' key={item._id}>
-                <a href={item.websiteUrl}>
-                  <div className="card">
+                 <Modal
+                   show={show}
+                   onHide={handleClose}
+                   backdrop="static"
+                   keyboard={false}
+                 >
+                   <Modal.Header closeButton>
+                     <Modal.Title className='card-title'>  {item.name} </Modal.Title>
+                   </Modal.Header>
+                   <Modal.Body>
+                     <p className='card-text'>{item.description}</p>
+                   </Modal.Body>
+                   <Modal.Footer>
+                     <Button variant="secondary" onClick={handleClose}>
+                       Close
+                     </Button>
+                   </Modal.Footer>
+                 </Modal>
+                  <div className="card" onClick={handleShow}>
                     <div className='over-hidden'>
                       <img height="200" src={item.image} alt="" className='card-img-top' />
                     </div>
                     <div className="card-body">
                       <h3 className='card-title'>{item.name}</h3>
-                      <p className='card-text'>{item.description}</p>
                       <p className='card-text'>{item.workingdate}</p>
+                       <a class="btn btn-success" href={item.websiteUrl}>visit website</a> 
                     </div>
                   </div>
-                  </a>  
             </div>
           }):null
           }
